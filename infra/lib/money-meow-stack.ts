@@ -49,9 +49,8 @@ export class MoneyMeowStack extends cdk.Stack {
     alertTopic.grantPublish(fn);
 
     const ssmParamNames = [
-      '/money-meow/google-client-id',
-      '/money-meow/google-client-secret',
-      '/money-meow/google-refresh-token',
+      '/money-meow/gas-url',
+      '/money-meow/gas-api-key',
       '/money-meow/line-channel-access-token',
       '/money-meow/line-user-id',
     ];

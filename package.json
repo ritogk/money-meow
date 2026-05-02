@@ -1,15 +1,18 @@
 {
   "name": "money-meow",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "local": "cd api && npx tsx src/local.ts",
-    "auth": "npx tsx scripts/get-refresh-token.ts",
+    "gas:push": "cd gas && npx clasp push --force",
+    "gas:open": "cd gas && npx clasp open",
     "deploy": "cd infra && npx cdk deploy",
     "diff": "cd infra && npx cdk diff",
     "synth": "cd infra && npx cdk synth"
   },
   "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.83",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }

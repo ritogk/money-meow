@@ -3,10 +3,9 @@ import { buildMessage } from './calculator';
 import { sendLineMessage } from './line';
 
 async function main() {
-  const gmailCreds = {
-    clientId: process.env.GOOGLE_CLIENT_ID!,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    refreshToken: process.env.GOOGLE_REFRESH_TOKEN!,
+  const gasCreds = {
+    url: process.env.GAS_URL!,
+    apiKey: process.env.GAS_API_KEY!,
   };
 
   const lineCreds = {
@@ -14,8 +13,8 @@ async function main() {
     userId: process.env.LINE_USER_ID!,
   };
 
-  console.log('Fetching latest billing email...');
-  const billingAmount = await fetchLatestBillingAmount(gmailCreds);
+  console.log('Fetching latest billing from GAS...');
+  const billingAmount = await fetchLatestBillingAmount(gasCreds);
 
   if (billingAmount === null) {
     console.log('No billing email found.');
