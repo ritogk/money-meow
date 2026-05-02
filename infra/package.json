@@ -1,0 +1,22 @@
+{
+  "name": "money-meow-infra",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy",
+    "diff": "cdk diff"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.190.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "aws-cdk": "^2.190.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.8.3"
+  }
+}
