@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - money-meow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.3rem; }
+    p, ul { margin-bottom: 1rem; }
+    ul { padding-left: 1.5rem; }
+    a { color: #0066cc; }
+    .updated { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+    .back { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+
+<h1>プライバシーポリシー</h1>
+<p class="updated">最終更新日: 2026年5月2日</p>
+
+<h2>1. はじめに</h2>
+<p>money-meow（以下「本アプリ」）は、個人が自身のGmailアカウントからクレジットカードの請求メールを取得し、家計管理を行うための個人利用アプリケーションです。本プライバシーポリシーは、本アプリにおける情報の取り扱いについて説明します。</p>
+
+<h2>2. 取得する情報</h2>
+<p>本アプリは、Google OAuth 2.0 を使用して以下の情報にアクセスします:</p>
+<ul>
+  <li><strong>Gmailメールデータ（読み取り専用）</strong>: クレジットカード会社からの請求確定メールの件名および本文を検索・取得します。</li>
+</ul>
+<p>本アプリがアクセスするGmailのスコープは <code>gmail.readonly</code>（読み取り専用）のみであり、メールの送信・削除・変更は一切行いません。</p>
+
+<h2>3. 情報の利用目的</h2>
+<p>取得した情報は以下の目的にのみ使用します:</p>
+<ul>
+  <li>クレジットカードの請求金額の抽出</li>
+  <li>月間の利用可能金額の計算</li>
+  <li>計算結果のLINEへの通知</li>
+</ul>
+
+<h2>4. 情報の保存</h2>
+<p>本アプリは取得したメールデータを永続的に保存しません。メールの内容はLambda関数の実行中にのみメモリ上で処理され、実行完了後に破棄されます。</p>
+<p>認証に必要なOAuthトークンは、AWS Systems Manager Parameter Store に暗号化して保存されます。</p>
+
+<h2>5. 第三者への提供</h2>
+<p>本アプリが取得した情報を第三者に提供・販売・共有することはありません。ただし、計算結果のみがLINE Messaging APIを通じてユーザー自身のLINEアカウントに送信されます。</p>
+
+<h2>6. セキュリティ</h2>
+<p>本アプリは以下のセキュリティ対策を実施しています:</p>
+<ul>
+  <li>認証情報はAWS Systems Manager Parameter Store（SecureString）で暗号化保管</li>
+  <li>Gmail APIへのアクセスは最小権限（読み取り専用）に制限</li>
+  <li>AWS Lambda上で実行され、実行環境は一時的なもの</li>
+</ul>
+
+<h2>7. ユーザーの権利</h2>
+<p>ユーザーはいつでも以下の操作を行うことができます:</p>
+<ul>
+  <li><a href="https://myaccount.google.com/permissions">Googleアカウント設定</a>から本アプリのアクセス権を取り消す</li>
+  <li>本アプリの使用を中止する</li>
+</ul>
+
+<h2>8. Google API Services User Data Policy</h2>
+<p>本アプリのGoogle APIサービスから受け取った情報の使用および他のアプリへの転送は、<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>（Limited Use の要件を含む）に準拠します。</p>
+
+<h2>9. 変更について</h2>
+<p>本プライバシーポリシーは必要に応じて更新されることがあります。重要な変更がある場合は、本ページにて通知します。</p>
+
+<p class="back"><a href="index.html">← ホームに戻る</a></p>
+
+</body>
+</html>
